@@ -130,7 +130,7 @@ export default function PreRegistrationFormSection({ selectedPlan }: PreRegistra
   }
 
   return (
-    <div className="w-full flex justify-center items-center">
+    <div id="pre-registration-form" className="w-full flex justify-center items-center">
       <div className="w-full max-w-2xl px-4 md:px-12 py-16 md:py-20 flex flex-col justify-center items-center gap-8 border-b border-[rgba(55,50,47,0.12)]">
         {/* Header */}
         <div className="w-full flex flex-col justify-center items-center gap-4">

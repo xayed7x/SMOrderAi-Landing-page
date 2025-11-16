@@ -71,7 +71,10 @@ export default function VisionSection() {
 
         {/* CTA for Vision */}
         <div className="mt-4 md:mt-8 flex justify-center">
-          <button className="px-8 md:px-12 py-3 md:py-4 bg-[#37322F] hover:bg-[#37322F]/90 text-white rounded-full font-medium text-sm md:text-base transition-colors">
+          <button
+            onClick={() => (window.location.href = "#pre-registration-form")}
+            className="px-8 md:px-12 py-3 md:py-4 bg-[#37322F] hover:bg-[#37322F]/90 text-white rounded-full font-medium text-sm md:text-base transition-colors"
+          >
             Join Now & Grow With Us
           </button>
         </div>
