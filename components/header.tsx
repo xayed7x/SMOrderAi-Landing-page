@@ -22,7 +22,7 @@ export function Header() {
           {/* Logo */}
           <div className="flex items-center space-x-8">
             <div className="text-[#37322f] font-semibold text-lg cursor-pointer hover:text-[#37322f]/80 transition-colors">
-              SmartOrder AI
+              Orderly
             </div>
 
             {/* Desktop Navigation */}

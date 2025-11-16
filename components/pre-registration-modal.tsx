@@ -74,12 +74,12 @@ export function PreRegistrationModal({ isOpen, onClose }: PreRegistrationModalPr
       })
 
       // Store in localStorage for demo purposes
-      const submissions = JSON.parse(localStorage.getItem('smartorder_submissions') || '[]')
+      const submissions = JSON.parse(localStorage.getItem('orderly_submissions') || '[]')
       submissions.push({
         ...formData,
         timestamp: new Date().toISOString()
       })
-      localStorage.setItem('smartorder_submissions', JSON.stringify(submissions))
+      localStorage.setItem('orderly_submissions', JSON.stringify(submissions))
 
       // Reset form
       setFormData({
@@ -117,7 +117,7 @@ export function PreRegistrationModal({ isOpen, onClose }: PreRegistrationModalPr
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-[rgba(55,50,47,0.12)]">
             <h2 className="text-xl font-semibold text-[#37322F]">
-              আপনার SmartOrder যাত্রা শুরু করুন
+              আপনার Orderly যাত্রা শুরু করুন
             </h2>
             <button
               onClick={onClose}

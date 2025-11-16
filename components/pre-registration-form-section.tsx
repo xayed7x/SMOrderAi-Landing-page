@@ -72,18 +72,18 @@ export default function PreRegistrationFormSection({ selectedPlan }: PreRegistra
       await new Promise((resolve) => setTimeout(resolve, 1000))
 
       // Store in localStorage for demo
-      const registrations = JSON.parse(localStorage.getItem("smartorder_registrations") || "[]")
+      const registrations = JSON.parse(localStorage.getItem("orderly_registrations") || "[]")
       registrations.push({
         ...formData,
         selected_plan: selectedPlan,
         timestamp: new Date().toISOString(),
       })
-      localStorage.setItem("smartorder_registrations", JSON.stringify(registrations))
+      localStorage.setItem("orderly_registrations", JSON.stringify(registrations))
 
       // Show success state
       setIsSuccess(true)
       toast.success("Registration Successful!", {
-        description: "We will notify you as soon as SmartOrder AI launches.",
+        description: "We will notify you as soon as Orderly launches.",
       })
 
       // Reset form after 3 seconds
@@ -122,7 +122,7 @@ export default function PreRegistrationFormSection({ selectedPlan }: PreRegistra
             Thank you! Your early-bird price is locked.
           </h3>
           <p className="text-center text-[#605A57] text-base font-normal leading-7 font-sans">
-            We'll notify you when SmartOrder AI launches.
+            We'll notify you when Orderly launches.
           </p>
         </div>
       </div>

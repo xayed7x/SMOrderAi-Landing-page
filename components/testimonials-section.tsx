@@ -20,7 +20,7 @@ export default function TestimonialsSection() {
 
   const testimonials = [
     {
-      quote: "SmartOrder AI ব্যবহারের পর আমাদের একটাও কাস্টমার কমেন্টের কারণে হাতছাড়া হয় না।",
+      quote: "Orderly ব্যবহারের পর আমাদের একটাও কাস্টমার কমেন্টের কারণে হাতছাড়া হয় না।",
       name: "Roshni Ahmed",
       company: "Founder, Fashion Boutique",
       image: "/placeholder.svg",

@@ -7,7 +7,7 @@ export default function FooterSection() {
           {/* Brand Section */}
           <div className="self-stretch flex justify-start items-center gap-3">
             <div className="text-center text-[#49423D] text-xl font-semibold leading-4 font-sans">
-              SmartOrder AI
+              Orderly
             </div>
           </div>
           <div className="text-[rgba(73,66,61,0.90)] text-sm font-medium leading-[18px] font-sans">
@@ -104,7 +104,7 @@ export default function FooterSection() {
       {/* Bottom Section with Pattern */}
       <div className="self-stretch h-12 relative overflow-hidden border-t border-b border-[rgba(55,50,47,0.12)] flex items-center justify-center">
         <div className="text-[#605A57] text-xs md:text-sm font-normal">
-          © 2025 SmartOrder AI. All rights reserved.
+          © 2025 Orderly. All rights reserved.
         </div>
       </div>
     </div>
