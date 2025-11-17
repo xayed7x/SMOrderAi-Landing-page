@@ -19,6 +19,7 @@ The project is built on a modern, serverless-focused stack.
 - **Email:** Resend
 - **Styling:** Tailwind CSS
 - **UI Components:** Shadcn/UI, Radix UI primitives, and custom components.
+- **Component Variants:** `cva` (class-variance-authority) is used to create and manage component variants, as seen in `components/ui/button.tsx`.
 
 ## 3. Project Structure
 
@@ -34,8 +35,8 @@ The codebase is organized into the following key directories:
 
 The main landing page (`app/page.tsx`) is composed of several distinct sections, each with a specific purpose.
 
-- **Header (`components/header.tsx`):** A sticky navigation bar with links that smooth-scroll to the "Features", "Pricing", and "FAQ" sections. It also includes a "Log in" button (currently a placeholder).
-- **Hero Section (`components/hero-section.tsx`):** The main entry point, featuring the primary headline "Turn Social Comments Into Customers," a subheadline in Bengali, key value propositions, and a primary "Get Started" CTA that smooth-scrolls to the pricing section.
+- **Header (`components/header.tsx`):** A sticky navigation bar with links that smooth-scroll to the "Features", "Pricing", and "FAQ" sections. It features the brand logo as a Next.js `Image` component and includes a "Log in" button (currently a placeholder).
+- **Hero Section (`components/hero-section.tsx`):** The main entry point, featuring the primary headline "Turn Social Comments Into Customers," a subheadline in Bengali, key value propositions, and a primary "Get Started" CTA that uses the `Button` component to smooth-scroll to the pricing section.
 - **Problem Section (`components/problem-section.tsx`):** Highlights the pain points for businesses, such as missing customer responses, overwhelming comment volume, and high moderator costs.
 - **Solution Section (`components/solution-section.tsx`):** Presents Autex's features as the solution, including "Auto Comment Reply," "Smart Intent Detection," and "Automated Inbox Delivery."
 - **Vision Section (`components/vision-section.tsx`):** Showcases upcoming features like "AI Product Recognition" and "Automated Order Taking" to build excitement for the future of the product.
@@ -44,7 +45,7 @@ The main landing page (`app/page.tsx`) is composed of several distinct sections,
 - **Early Bird Pricing (`components/early-bird-pricing.tsx`):** Presents three distinct pricing plans: "1 Month Trial," "3 Month Pack," and "Founder's Price." Clicking a plan's CTA selects that plan and smooth-scrolls the user to the form.
 - **Pre-registration Form (`components/pre-registration-form-section.tsx`):** The unified, client-side validated form where users can register. It handles loading, success, and error states to provide clear user feedback.
 - **FAQ Section (`components/faq-section.tsx`):** An accordion-style FAQ to answer common questions about security, accuracy, payment, and cancellation.
-- **CTA Section (`components/cta-section.tsx`):** A final call-to-action section that encourages users to sign up, linking back to the pricing section.
+- **CTA Section (`components/cta-section.tsx`):** A final call-to-action section that encourages users to sign up, using a `<button>` element that smooth-scrolls back to the pricing section.
 - **Footer Section (`components/footer-section.tsx`):** Contains branding, social media links, navigation links, and contact information.
 
 ## 5. Other Pages
@@ -66,3 +67,11 @@ The database schema is managed by Supabase (PostgreSQL) and is defined in the `a
 
 - **Hosting:** The application is deployed on Vercel.
 - **Domain:** The live application is accessible at [https://autex.vercel.app/](https://autex.vercel.app/).
+
+## 9. SEO and Social Sharing
+
+The project implements comprehensive SEO and social sharing metadata to ensure professional representation on search engines and social media platforms.
+
+- **Metadata:** The root layout (`app/layout.tsx`) exports a comprehensive `metadata` object containing default SEO and social sharing information for the entire site. This includes `title`, `description`, `metadataBase`, `openGraph`, and `twitter` properties.
+- **Favicons:** The application uses favicons for all devices, placed in the `/app` directory.
+- **Open Graph Image:** The Open Graph image (`/public/open graph.png`) is used for social sharing cards on platforms like Facebook, Twitter, and LinkedIn.
