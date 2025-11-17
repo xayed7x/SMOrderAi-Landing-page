@@ -45,15 +45,20 @@ export function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6">
-            <button
+            <Button
+              className="bg-[#37322F] hover:bg-[#2A2520] text-white text-sm font-semibold font-sans rounded-full px-6 py-3 shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset]"
               onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
-              className="h-10 sm:h-11 px-8 sm:px-12 bg-[#37322f] hover:bg-[#37322f]/90 text-white rounded-full font-medium text-xs sm:text-sm shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset] flex items-center justify-center"
             >
               Get Started — 999৳/month
-            </button>
-            <button className="h-10 sm:h-11 px-6 sm:px-8 border border-[rgba(55,50,47,0.12)] text-[#37322f] rounded-full font-medium text-xs sm:text-sm hover:bg-[rgba(55,50,47,0.05)] transition-colors">
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="rounded-full"
+              onClick={() => alert("Demo video functionality would be implemented here")}
+            >
               Watch a 2-Min Demo
-            </button>
+            </Button>
           </div>
 
           {/* Visual Element Placeholder */}

@@ -19,23 +19,40 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  title: "Autex - AI-Powered Comment Management for Facebook & Instagram",
-  description:
-    "Autex automates customer interactions on Facebook & Instagram with AI-powered comments, inbox automation, and intelligent moderation. Join 200+ SMEs in Bangladesh.",
-  keywords: "AI comment management, Facebook automation, Instagram automation, customer engagement, Bangladesh SaaS",
-  authors: [{ name: "Autex" }],
+  // Core Metadata for SEO
+  title: {
+    default: 'Autex: AI Automation for Social Commerce', // Default title for the homepage
+    template: '%s | Autex', // Template for titles on other pages
+  },
+  description: 'Turn social media comments into customers, automatically. Autex is an AI-powered platform that replies to comments, manages your inbox, and automates orders 24/7.',
+  metadataBase: new URL('https://autex.vercel.app/'), // Replace with your final domain
+
+  // Open Graph (OG) Metadata for Social Sharing
   openGraph: {
-    title: "Autex - AI-Powered Social Media Management",
-    description: "Automate customer interactions with AI on Facebook & Instagram. 50% discount for early adopters.",
-    type: "website",
+    title: 'Autex: AI Automation for Social Commerce',
+    description: 'Stop losing customers in your comments. Let AI handle your social commerce from reply to order.',
+    url: 'https://autex.vercel.app/', // Replace with your final domain
+    siteName: 'Autex',
+    images: [
+      {
+        url: '/open graph.png', // The path to your OG image in the /public folder
+        width: 1200,
+        height: 630,
+        alt: 'Autex platform automating social media comments.',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
+
+  // Twitter-specific Metadata
   twitter: {
-    card: "summary_large_image",
-    title: "Autex - AI Social Media Management",
-    description: "Automate customer interactions with AI on Facebook & Instagram.",
+    card: 'summary_large_image',
+    title: 'Autex: AI Automation for Social Commerce',
+    description: 'Turn comments into customers with AI. 24/7 automated replies and order management.',
+    images: ['/open graph.png'], // The path to your OG image
   },
-    generator: 'v0.app'
-}
+};
 
 export default function RootLayout({
   children,

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from 'lucide-react'
 
@@ -21,9 +22,13 @@ export function Header() {
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
           <div className="flex items-center space-x-8">
-            <div className="text-[#37322f] font-semibold text-lg cursor-pointer hover:text-[#37322f]/80 transition-colors">
-              Autex
-            </div>
+            <Image
+              src="/logo-transparent.png"
+              width={100}
+              height={40}
+              alt="Autex AI Logo"
+              className="cursor-pointer"
+            />
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-6">
