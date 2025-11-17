@@ -19,19 +19,19 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  title: "Orderly - AI-Powered Comment Management for Facebook & Instagram",
+  title: "Autex - AI-Powered Comment Management for Facebook & Instagram",
   description:
-    "Orderly automates customer interactions on Facebook & Instagram with AI-powered comments, inbox automation, and intelligent moderation. Join 200+ SMEs in Bangladesh.",
+    "Autex automates customer interactions on Facebook & Instagram with AI-powered comments, inbox automation, and intelligent moderation. Join 200+ SMEs in Bangladesh.",
   keywords: "AI comment management, Facebook automation, Instagram automation, customer engagement, Bangladesh SaaS",
-  authors: [{ name: "Orderly" }],
+  authors: [{ name: "Autex" }],
   openGraph: {
-    title: "Orderly - AI-Powered Social Media Management",
+    title: "Autex - AI-Powered Social Media Management",
     description: "Automate customer interactions with AI on Facebook & Instagram. 50% discount for early adopters.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Orderly - AI Social Media Management",
+    title: "Autex - AI Social Media Management",
     description: "Automate customer interactions with AI on Facebook & Instagram.",
   },
     generator: 'v0.app'

@@ -61,7 +61,7 @@ export default function ProblemSection() {
       <div className="self-stretch px-4 md:px-12 pb-12 md:pb-16 flex justify-center items-center">
         <div className="w-full max-w-[800px] px-4 md:px-6 py-6 md:py-8 bg-[rgba(55,50,47,0.05)] rounded-lg border border-[rgba(55,50,47,0.12)]">
           <p className="text-center text-[#37322F] font-semibold text-lg md:text-xl">
-            This is exactly the problem Orderly solves — instantly and permanently.
+            This is exactly the problem Autex solves — instantly and permanently.
           </p>
         </div>
       </div>

@@ -1,10 +1,6 @@
 "use client"
 
-import { useState } from "react"
-import { PreRegistrationModal } from "./pre-registration-modal"
-
 export default function CTASection() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
     <>
@@ -37,20 +33,18 @@ export default function CTASection() {
               </p>
             </div>
             <div className="w-full max-w-[497px] flex flex-col justify-center items-center gap-6">
-              <button
-                onClick={() => setIsModalOpen(true)}
+              <a
+                href="#pricing"
                 className="w-full px-6 py-3 relative bg-[#37322F] shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset] overflow-hidden rounded-full flex justify-center items-center cursor-pointer hover:bg-[#2A2520] transition-colors text-center"
               >
                 <div className="w-44 h-[41px] absolute left-0 top-0 bg-gradient-to-b from-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.10)] mix-blend-multiply pointer-events-none"></div>
                 <span className="text-white text-sm font-semibold leading-5 font-sans relative z-10 block">
                   Automate My Business Now — 999৳/month
                 </span>
-              </button>            </div>
+              </a>            </div>
           </div>
         </div>
       </div>
-
-      <PreRegistrationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   )
 }

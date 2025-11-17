@@ -5,7 +5,7 @@ export default function HowItWorks() {
     {
       number: "1",
       title: "Connect Your Facebook Page",
-      description: "1-click secure login. Your page is instantly connected with Orderly.",
+      description: "1-click secure login. Your page is instantly connected with Autex.",
       descriptionBn: "",
     },
     {

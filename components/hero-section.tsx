@@ -1,11 +1,8 @@
 "use client"
 
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { PreRegistrationModal } from "./pre-registration-modal"
 
 export function HeroSection() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
     <>
@@ -48,12 +45,12 @@ export function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6">
-            <Button
-              onClick={() => setIsModalOpen(true)}
-              className="h-10 sm:h-11 px-8 sm:px-12 bg-[#37322f] hover:bg-[#37322f]/90 text-white rounded-full font-medium text-xs sm:text-sm shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset]"
+            <button
+              onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
+              className="h-10 sm:h-11 px-8 sm:px-12 bg-[#37322f] hover:bg-[#37322f]/90 text-white rounded-full font-medium text-xs sm:text-sm shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset] flex items-center justify-center"
             >
               Get Started — 999৳/month
-            </Button>
+            </button>
             <button className="h-10 sm:h-11 px-6 sm:px-8 border border-[rgba(55,50,47,0.12)] text-[#37322f] rounded-full font-medium text-xs sm:text-sm hover:bg-[rgba(55,50,47,0.05)] transition-colors">
               Watch a 2-Min Demo
             </button>
@@ -72,8 +69,6 @@ export function HeroSection() {
           </div>
         </div>
       </section>
-
-      <PreRegistrationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   )
 }
