@@ -1,26 +1,41 @@
 'use client'
 
 export default function ProblemSection() {
-  const painPoints = [
+  const problemCards = [
     {
-      en: "Missing Customer Responses",
-      bn: "একটা কমেন্টের রিপ্লাই দিতে দেরি হওয়ায় কাস্টমার অন্য পেজ থেকে কিনে নিয়েছে।",
+      icon: "⏰",
+      title: "Slow Response = Lost Sales",
+      description_en: "Customer comments 'Price?' at 2 AM. I reply at 9 AM. By then, they've bought from another page.",
+      description_bn: "কাস্টমার রাত ২টায় কমেন্ট করে 'Price?' আমি সকাল ৯টায় reply দেই। ততক্ষণে সে অন্য পেজ থেকে কিনে ফেলেছে।",
+      impact_bn: "প্রতিদিন এভাবে ৫-৮টা অর্ডার হাতছাড়া হয়।",
     },
     {
-      en: "Overwhelming Comment Volume",
-      bn: "একসাথে 10,000 টা কমেন্ট আসলে রিপ্লাই দিতে দিতে দিন শেষ, আসল কাজে মনোযোগই দিতে পারি না।",
+      icon: "📸",
+      title: "Screenshot Chaos",
+      description_en: "Customers send product screenshots. I manually search for the product and price. Time wasted + mistakes made.",
+      description_bn: "কাস্টমাররা পণ্যের screenshot পাঠায়। আমি manually খুঁজে বের করি কোন product, কত দাম। সময় নষ্ট + ভুল হয়।",
+      impact_bn: "একটা ভুল মানে একটা angry customer।",
     },
     {
-      en: "Rising Moderator Costs",
-      bn: "মডারেটর রাখতে গিয়ে খরচ বাড়ছে, আবার তার ভুলের কারণেও কাস্টমার হারাতে হচ্ছে।",
+      icon: "📝",
+      title: "Manual Order Collection",
+      description_en: "I have to manually collect name, address, and phone number from each customer separately. I spend hours in the inbox.",
+      description_bn: "প্রতিটা customer-এর কাছ থেকে আলাদা করে নাম, ঠিকানা, ফোন নম্বর collect করতে হয়। ঘণ্টার পর ঘণ্টা inbox-এ বসে থাকি।",
+      impact_bn: "এটাই আমার দিনের সবচেয়ে বড় headache।",
     },
     {
-      en: "Time Zone Delays",
-      bn: "রাতের বেলা বা ছুটির দিনে আসা কমেন্টগুলোর উত্তর দিতে দেরি হয়ে যায়, ততক্ষণে কাস্টমারের আগ্রহ কমে যায়।",
+      icon: "🌙",
+      title: "Midnight Messages",
+      description_en: "I see messages from 12-2 AM in the morning. By then, the customer's interest has waned. Even if I reply, they don't respond.",
+      description_bn: "রাত ১২টা-২টার messages সকালে দেখি। ততক্ষণে customer-এর interest কমে গেছে। Reply দিলেও আর respond করে না।",
+      impact_bn: "৩০-৪০% potential orders এভাবে মিস হয়।",
     },
     {
-      en: "Lost Conversions",
-      bn: "কমেন্ট থেকে ইনবক্সে নিতে গিয়ে অর্ধেক কাস্টমার রাস্তা হারিয়ে যায়।",
+      icon: "📈",
+      title: "No System = No Scale",
+      description_en: "I'm doing everything manually, which means I can't scale. I want to launch more products but I know I won't be able to handle the inbox.",
+      description_bn: "আমি manually সব করছি মানে আমি scale করতে পারছি না। আরো products launch করতে চাই কিন্তু inbox handle করতে পারব না জানি।",
+      impact_bn: "Manual system = growth-এর ceiling।",
     },
   ]
 
@@ -32,39 +47,36 @@ export default function ProblemSection() {
           <h2 className="w-full text-center flex justify-center flex-col text-[#49423D] text-2xl md:text-4xl font-semibold leading-tight md:leading-[44px] font-sans tracking-tight">
             আপনার ব্যবসা প্রতিদিন কাস্টমার হারাচ্ছে
           </h2>
-          <p className="self-stretch text-center text-[#605A57] text-base md:text-lg font-normal leading-7 font-sans">
-            আপনি হয়তো বুঝতেই পারছেন না।
-          </p>
+          <p>আপনি হয়তো বুঝতেই পারছেন না।</p>
         </div>
       </div>
 
-      {/* Pain Points */}
+      {/* Problem Cards */}
       <div className="self-stretch px-4 md:px-12 py-8 md:py-12 flex flex-col justify-center items-center gap-4">
         <div className="w-full max-w-[800px] flex flex-col gap-3 md:gap-4">
-          {painPoints.map((point, index) => (
+          {problemCards.map((card, index) => (
             <div
               key={index}
               className="px-4 md:px-6 py-3 md:py-4 border border-[rgba(55,50,47,0.12)] rounded-lg hover:bg-[rgba(55,50,47,0.03)] transition-colors"
             >
-              <p className="text-[#49423D] font-semibold text-base md:text-lg mb-1">
-                {point.en}
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xl">{card.icon}</span>
+                <p className="text-[#49423D] font-semibold text-base md:text-lg">
+                  {card.title}
+                </p>
+              </div>
+              <p className="text-[#605A57] text-base font-normal leading-[1.6]">
+                "{card.description_bn}"
               </p>
-              <p className="text-[#605A57] text-sm md:text-base font-normal leading-relaxed">
-                "{point.bn}"
+              <p className="text-[#605A57] text-base font-normal leading-[1.6] mt-1">
+                {card.impact_bn}
               </p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Closing statement */}
-      <div className="self-stretch px-4 md:px-12 pb-12 md:pb-16 flex justify-center items-center">
-        <div className="w-full max-w-[800px] px-4 md:px-6 py-6 md:py-8 bg-[rgba(55,50,47,0.05)] rounded-lg border border-[rgba(55,50,47,0.12)]">
-          <p className="text-center text-[#37322F] font-semibold text-lg md:text-xl">
-            This is exactly the problem Autex solves — instantly and permanently.
-          </p>
-        </div>
-      </div>
+
     </div>
   )
 }

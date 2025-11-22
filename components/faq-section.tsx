@@ -1,29 +1,113 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
+import type React from "react";
 
 interface FAQItem {
-  question: string
-  questionBn: string
-  answer: string
-  answerBn?: string
+  question: string;
+  questionBn: string;
+  answer: React.ReactNode; // changed from string to React.ReactNode to support structured content
+  answerBn?: string;
 }
 
 const faqData: FAQItem[] = [
+  {
+    question: "AI কীভাবে product recognize করে?",
+    questionBn: "How does AI recognize products?",
+    answer: (
+      <div className="space-y-3">
+        <p>Autex একটা 3-tier system use করে:</p>
+        <ol className="list-decimal pl-5 space-y-1">
+          <li>
+            <span className="font-semibold">Exact image match:</span> Instant,
+            free (0s)
+          </li>
+          <li>
+            <span className="font-semibold">
+              Visual features + text detection:
+            </span>{" "}
+            Fast, cheap
+          </li>
+          <li>
+            <span className="font-semibold">Advanced AI vision:</span> High
+            accuracy (85-92%)
+          </li>
+        </ol>
+        <p className="text-sm bg-yellow-50 text-yellow-800 p-2 rounded border border-yellow-100">
+          যদি AI নিশ্চিত না হয়, এটা আপনাকে manually confirm করতে বলবে।
+        </p>
+      </div>
+    ),
+    answerBn: "",
+  },
+  {
+    question: "Screenshot limit শেষ হলে কী হবে?",
+    questionBn: "What happens if the screenshot limit is reached?",
+    answer: (
+      <div className="space-y-3">
+        <p>আপনি তিনটা option পাবেন:</p>
+        <ul className="list-disc pl-5 space-y-1">
+          <li>Wait করুন next month পর্যন্ত (auto-reset)</li>
+          <li>
+            Extra pack কিনুন:{" "}
+            <span className="font-semibold">100 screenshots = ৳১৫০</span>
+          </li>
+          <li>Higher plan-এ upgrade করুন</li>
+        </ul>
+        <p className="text-sm text-gray-500 italic">
+          *আপনার unlimited text messages থাকবে — শুধু image recognition limited।
+        </p>
+      </div>
+    ),
+    answerBn: "",
+  },
+  {
+    question: "Phase 2 কবে আসবে?",
+    questionBn: "When will Phase 2 be launched?",
+    answer: (
+      <div className="space-y-3">
+        <p>
+          আমরা target করছি{" "}
+          <span className="font-semibold">২-৩ মাসের মধ্যে (Q1 2025)</span>।
+        </p>
+        <div>
+          <p className="font-medium mb-1">Phase 2-তে আসবে:</p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Payment gateway (bKash, Nagad)</li>
+            <li>Delivery integration (Pathao, eCourier)</li>
+            <li>Advanced analytics dashboard</li>
+          </ul>
+        </div>
+        <p className="text-sm bg-green-50 text-green-800 p-2 rounded border border-green-100 font-medium">
+          Founder members সব feature পাবে একই ৳৫৯৯ price-এ!
+        </p>
+      </div>
+    ),
+    answerBn: "",
+  },
+  {
+    question: "আমার existing orders/data কি migrate করতে পারব?",
+    questionBn: "Can I migrate my existing orders/data?",
+    answer: (
+      <div className="space-y-3">
+        <p className="font-semibold text-lg">হ্যাঁ!</p>
+        <p>আমরা আপনাকে help করব:</p>
+        <ul className="list-disc pl-5 space-y-1">
+          <li>Excel/CSV থেকে products import</li>
+          <li>Setup assistance provided</li>
+          <li>Onboarding call available</li>
+        </ul>
+        <p className="font-medium text-[#49423D]">আপনি একা না। আমরা আছি।</p>
+      </div>
+    ),
+    answerBn: "",
+  },
   {
     question: "Is this really 24/7?",
     questionBn: "এটা কি সত্যি ২৪ ঘণ্টা কাজ করে?",
     answer: "Yes, our AI server runs 24/7 without interruption.",
     answerBn:
       "হ্যাঁ, আমাদের AI সার্ভার ২৪/৭ সচল থাকে। আপনার পেজের কোনো কমেন্টই মিস হবে না।",
-  },
-  {
-    question: "Can the AI make mistakes?",
-    questionBn: "AI কি ভুল রিপ্লাই দিতে পারে?",
-    answer:
-      "Our AI has 99% accuracy in understanding comment intent. You can set custom rules to make it even more perfect.",
-    answerBn:
-      "আমাদের AI ৯৯% নির্ভুলভাবে কমেন্টের উদ্দেশ্য বুঝতে পারে। তবে আপনি রিপ্লাইয়ের নিয়ম সেট করে এটিকে আরও পারফেক্ট করতে পারবেন।",
   },
   {
     question: "Is my Facebook page secure?",
@@ -33,30 +117,7 @@ const faqData: FAQItem[] = [
     answerBn:
       "অবশ্যই। আমরা ফেসবুকের অফিশিয়াল API ব্যবহার করি এবং আপনার পেজের পাসওয়ার্ড বা ব্যক্তিগত তথ্যের কোনো অ্যাক্সেস নিই না।",
   },
-  {
-    question: "Can I cancel anytime?",
-    questionBn: "আমি কি যেকোনো সময় সাবস্ক্রিপশন বাতিল করতে পারবো?",
-    answer: "Yes, cancel your subscription anytime with no questions asked.",
-    answerBn:
-      "হ্যাঁ, আপনি যেকোনো সময় কোনো প্রশ্ন ছাড়াই আপনার সাবস্ক্রিপশন বাতিল করতে পারেন।",
-  },
-  {
-    question: "How do I pay?",
-    questionBn: "পেমেন্ট কীভাবে করতে হবে?",
-    answer:
-      "You can pay via bKash, Nagad, Rocket, or any Bangladeshi bank card.",
-    answerBn:
-      "আপনি বিকাশ, নগদ, রকেট বা যেকোনো ব্যাংক কার্ডের মাধ্যমে সহজেই পেমেন্ট করতে পারবেন।",
-  },
-  {
-    question: "Is there a setup fee?",
-    questionBn: "কি কোনো সেটআপ ফি আছে?",
-    answer:
-      "No hidden fees. Just 999৳/month, and our team helps you set up for free.",
-    answerBn:
-      "না, কোনো লুকানো খরচ নেই। শুধু ৯৯৯৳ মাসিক, এবং আমাদের টিম আপনাকে সম্পূর্ণ বিনামূল্যে সেটআপ করে দেবে।",
-  },
-]
+];
 
 function ChevronDownIcon({ className }: { className?: string }) {
   return (
@@ -68,17 +129,25 @@ function ChevronDownIcon({ className }: { className?: string }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="m6 9 6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="m6 9 6 6 6-6"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
-  )
+  );
 }
 
 export default function FAQSection() {
-  const [openItems, setOpenItems] = useState<number[]>([])
+  const [openItems, setOpenItems] = useState<number[]>([]);
 
   const toggleItem = (index: number) => {
-    setOpenItems((prev) => (prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]))
-  }
+    setOpenItems((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
+  };
 
   return (
     <div className="w-full flex justify-center items-start" id="faq">
@@ -97,10 +166,13 @@ export default function FAQSection() {
         <div className="w-full lg:flex-1 flex flex-col justify-center items-center">
           <div className="w-full flex flex-col">
             {faqData.map((item, index) => {
-              const isOpen = openItems.includes(index)
+              const isOpen = openItems.includes(index);
 
               return (
-                <div key={index} className="w-full border-b border-[rgba(73,66,61,0.16)] overflow-hidden">
+                <div
+                  key={index}
+                  className="w-full border-b border-[rgba(73,66,61,0.16)] overflow-hidden"
+                >
                   <button
                     onClick={() => toggleItem(index)}
                     className="w-full px-5 py-4 md:py-5 flex justify-between items-start gap-5 text-left hover:bg-[rgba(73,66,61,0.02)] transition-colors duration-200"
@@ -129,9 +201,9 @@ export default function FAQSection() {
                     }`}
                   >
                     <div className="px-5 pb-4 md:pb-5">
-                      <p className="text-[#605A57] text-base font-normal leading-6 font-sans mb-2">
+                      <div className="text-[#605A57] text-base font-normal leading-6 font-sans mb-2">
                         {item.answer}
-                      </p>
+                      </div>
                       {item.answerBn && (
                         <p className="text-[#605A57] text-base font-normal leading-6 font-sans italic">
                           {item.answerBn}
@@ -140,11 +212,11 @@ export default function FAQSection() {
                     </div>
                   </div>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

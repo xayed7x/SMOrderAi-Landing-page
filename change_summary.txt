@@ -1,0 +1,12 @@
+The `components/footer-section.tsx` file defines the current footer structure. To make the requested changes, I need you to provide the specific new content for the following sections:
+
+-   **Brand description**: What should replace "AI-powered social commerce for SMEs"?
+-   **Social media links/icons**: Any changes to the X, LinkedIn, or WhatsApp links/icons?
+-   **Navigation links**:
+    -   Under "Product": Features, Pricing, FAQ, Try Free
+    -   Under "Company": About us, Contact
+    -   Under "Contact": zayed.b.hamid@gmail.com, WhatsApp
+    Please specify any additions, removals, or modifications to these links or their text.
+-   **Copyright notice**: What should replace "© 2025 Autex. All rights reserved."?
+
+Once you provide this information, I will proceed with updating the footer.

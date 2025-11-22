@@ -20,7 +20,7 @@ export default function TestimonialsSection() {
 
   const testimonials = [
     {
-      quote: "Autex ব্যবহারের পর আমাদের একটাও কাস্টমার কমেন্টের কারণে হাতছাড়া হয় না।",
+      quote: "আগে রাতে ৫০+ কমেন্ট মিস হতো। Autex use করার পর প্রতিটা customer instantly response পায়। আর screenshot থেকে product identify করা — এটা magic! আমার order collection time 70% কমে গেছে।",
       name: "Roshni Ahmed",
       company: "Founder, Fashion Boutique",
       image: "/placeholder.svg",

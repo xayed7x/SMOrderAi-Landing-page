@@ -13,31 +13,28 @@ export function HeroSection() {
             <div className="flex flex-col items-center gap-6">
               <div className="w-full max-w-[748px] text-center">
                 <h1 className="text-[#37322f] text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-normal leading-tight md:leading-[72px] font-serif mb-2 md:mb-4">
-                  Turn Social Comments Into Customers
+                  আপনার F-Commerce Business এখন চলবে Autopilot-এ 
                 </h1>
-                <p className="text-[#37322f]/80 text-sm sm:text-base md:text-lg lg:text-xl font-semibold">
-                  Automatically.
-                </p>
               </div>
 
               {/* Subheadline in Bengali */}
               <p className="max-w-[600px] text-center text-[#605A57] text-xs sm:text-sm md:text-base leading-relaxed font-sans">
-                আপনার ফেসবুক পোস্টের প্রতিটি কমেন্টে AI নিজে রিপ্লাই করে মুহূর্তেই কাস্টমারকে ইনবক্সে নিয়ে আসবে।
+                কমেন্ট থেকে অর্ডার — সব কিছু AI করবে স্বয়ংক্রিয়ভাবে। আপনি শুধু ডেলিভারি দিন।
               </p>
 
               {/* Value Props */}
               <div className="max-w-[700px] grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3 text-center">
                 <div className="text-[#37322f] text-xs sm:text-sm font-medium">
-                  ✓ AI-Powered Instant Comment Reply
+                  ✓ Instant Comment Reply + DM
                 </div>
                 <div className="text-[#37322f] text-xs sm:text-sm font-medium">
-                  ✓ Automated Inbox Message Delivery
+                  ✓ AI Product Recognition from Screenshots 
                 </div>
                 <div className="text-[#37322f] text-xs sm:text-sm font-medium">
-                  ✓ Never Miss a Customer Again
+                  ✓ Conversational Order Collection 
                 </div>
                 <div className="text-[#37322f] text-xs sm:text-sm font-medium">
-                  ✓ Works 24/7, Even While You Sleep
+                  ✓ 24/7 Automation Even While You Sleep
                 </div>
               </div>
             </div>
@@ -49,7 +46,7 @@ export function HeroSection() {
               className="bg-[#37322F] hover:bg-[#2A2520] text-white text-sm font-semibold font-sans rounded-full px-6 py-3 shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset]"
               onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
             >
-              Get Started — 999৳/month
+              Pre-Register Now
             </Button>
             <Button
               variant="outline"
@@ -57,8 +54,18 @@ export function HeroSection() {
               className="rounded-full"
               onClick={() => alert("Demo video functionality would be implemented here")}
             >
-              Watch a 2-Min Demo
+              Watch 2-Min Demo
             </Button>
+          </div>
+
+          {/* Pricing information */}
+          <div className="text-center mt-4">
+            <p className="text-[#37322f] text-sm font-semibold font-sans">
+              🎁 Founder Pricing: মাত্র ৳৫৯৯/month (Locked Forever)
+            </p>
+            <p className="text-[#605A57] text-xs font-medium font-sans line-through">
+              Regular Price: ৳৯৯৯/month
+            </p>
           </div>
 
           {/* Visual Element Placeholder */}
