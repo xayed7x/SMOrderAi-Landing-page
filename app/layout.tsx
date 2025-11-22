@@ -21,16 +21,16 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   // Core Metadata for SEO
   title: {
-    default: 'Autex: AI Automation for Social Commerce', // Default title for the homepage
+    default: 'Autex: AI Order Automation for Social Commerce', // Default title for the homepage
     template: '%s | Autex', // Template for titles on other pages
   },
-  description: 'Turn social media comments into customers, automatically. Autex is an AI-powered platform that replies to comments, manages your inbox, and automates orders 24/7.',
+  description: 'Autex fully automates your social commerce. Our AI recognizes products from screenshots, takes orders conversationally, and manages your inbox 24/7. Turn any inquiry into a sale, instantly.',
   metadataBase: new URL('https://autex.vercel.app/'), // Replace with your final domain
 
   // Open Graph (OG) Metadata for Social Sharing
   openGraph: {
-    title: 'Autex: AI Automation for Social Commerce',
-    description: 'Stop losing customers in your comments. Let AI handle your social commerce from reply to order.',
+    title: 'Autex: From Screenshot to Sale with AI',
+    description: 'Don\'t just reply to comments. Autex\'s AI turns product screenshots from customers into fully confirmed orders, automatically. Manage your entire sales process without lifting a finger.',
     url: 'https://autex.vercel.app/', // Replace with your final domain
     siteName: 'Autex',
     images: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         url: '/open graph.png', // The path to your OG image in the /public folder
         width: 1200,
         height: 630,
-        alt: 'Autex platform automating social media comments.',
+        alt: 'Autex platform demonstrating AI order automation from a product screenshot.',
       },
     ],
     locale: 'en_US',
@@ -48,8 +48,8 @@ export const metadata: Metadata = {
   // Twitter-specific Metadata
   twitter: {
     card: 'summary_large_image',
-    title: 'Autex: AI Automation for Social Commerce',
-    description: 'Turn comments into customers with AI. 24/7 automated replies and order management.',
+    title: 'Autex: From Screenshot to Sale with AI',
+    description: 'Autex\'s AI turns product screenshots from customers into fully confirmed orders, automatically. The future of social commerce is here.',
     images: ['/open graph.png'], // The path to your OG image
   },
 };
