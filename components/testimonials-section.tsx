@@ -88,7 +88,7 @@ export default function TestimonialsSection() {
         <div className="flex-1 py-8 md:py-12 flex flex-col md:flex-row justify-center items-end gap-6 md:gap-8">
           <div className="self-stretch px-3 md:px-6 justify-center items-start gap-4 md:gap-6 flex flex-col md:flex-row">
             {/* Testimonial Quote */}
-            <div className="flex-1 px-6 md:px-8 py-6 md:py-8 shadow-[0px_0px_0px_0.75px_rgba(50,45,43,0.12)] overflow-hidden flex flex-col justify-start items-start gap-6">
+            <div className="flex-1 px-6 md:px-8 py-6 md:py-8 shadow-[0px_0px_0px_0.75px_rgba(50,45,43,0.12)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-start items-start gap-6">
               <div
                 className="self-stretch justify-start flex flex-col text-[#49423D] text-xl md:text-2xl font-medium leading-8 md:leading-8 font-sans h-auto md:h-[180px] overflow-hidden line-clamp-4 md:line-clamp-none transition-all duration-700 ease-in-out tracking-tight"
                 style={{

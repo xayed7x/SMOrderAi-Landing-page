@@ -54,7 +54,7 @@ export default function VisionSection() {
           {futureFeatures.map((feature, index) => (
             <div
               key={index}
-              className="p-6 md:p-8 border border-[rgba(55,50,47,0.12)] rounded-lg hover:shadow-sm transition-all"
+              className="p-6 md:p-8 border border-[rgba(55,50,47,0.12)] rounded-lg hover:shadow-lg hover:-translate-y-1 transition-all"
             >
               <div className="flex items-start gap-4 mb-4">
                 <div className="text-4xl">{feature.icon}</div>
@@ -96,7 +96,7 @@ export default function VisionSection() {
         {/* CTA for Vision */}
         <div className="mt-4 md:mt-8 flex justify-center">
           <Button
-            className="bg-[#37322F] hover:bg-[#2A2520] text-white text-sm font-semibold font-sans rounded-full px-6 py-3 shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset]"
+            className="bg-gradient-to-r from-[#605A57] to-[#37322f] text-white text-sm font-semibold font-sans rounded-full px-6 py-3 animate-shimmer"
             onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
           >
             Pre-Register Now

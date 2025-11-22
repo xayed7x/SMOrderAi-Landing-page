@@ -2,6 +2,7 @@
 
 import { useRef } from "react"
 import { toast } from "sonner"
+import { cn } from "@/lib/utils"
 import { Check } from 'lucide-react'
 
 interface PricingPlan {
@@ -75,11 +76,12 @@ const plans: PricingPlan[] = [
 ]
 
 interface EarlyBirdPricingProps {
+  selectedPlan: string
   onPlanSelect: (planId: string) => void
   formSectionRef: React.RefObject<HTMLDivElement>
 }
 
-export default function EarlyBirdPricing({ onPlanSelect, formSectionRef }: EarlyBirdPricingProps) {
+export default function EarlyBirdPricing({ selectedPlan, onPlanSelect, formSectionRef }: EarlyBirdPricingProps) {
   return (
     <div className="w-full flex flex-col justify-center items-center gap-2" id="pricing">
       {/* Header Section */}
@@ -108,7 +110,11 @@ export default function EarlyBirdPricing({ onPlanSelect, formSectionRef }: Early
           {plans.map((plan, index) => (
             <div
               key={plan.id}
-              className="flex-1 px-6 py-8 md:py-12 bg-white border border-[rgba(50,45,43,0.12)] rounded-lg flex flex-col justify-start items-start gap-8 hover:shadow-lg transition-shadow relative"
+              className={cn(
+                "flex-1 px-6 py-8 md:py-12 bg-white border rounded-lg flex flex-col justify-start items-start gap-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative cursor-pointer",
+                selectedPlan === plan.id && "border-2 border-[#37322f]"
+              )}
+              onClick={() => onPlanSelect(plan.id)}
             >
               {plan.badge && (
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#37322F] text-[#FBFAF9] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">
@@ -146,15 +152,13 @@ export default function EarlyBirdPricing({ onPlanSelect, formSectionRef }: Early
                   </div>
 
                 <button
-                  onClick={() => {
-                    onPlanSelect(plan.id)
-                    setTimeout(() => {
-                      formSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
-                    }, 100)
+                  onClick={(e) => {
+                    e.stopPropagation(); // prevent card click from firing again
+                    formSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
                   }}
-                  className="self-stretch px-4 py-3 relative bg-[#37322F] shadow-[0px_2px_4px_rgba(55,50,47,0.12)] overflow-hidden rounded-[99px] flex justify-center items-center hover:bg-[#37322F]/90 transition-colors cursor-pointer"
+                  className="self-stretch px-4 py-3 relative bg-gradient-to-r from-[#605A57] to-[#37322f] text-white rounded-[99px] flex justify-center items-center animate-shimmer"
                 >
-                  <div className="w-full h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0.20)] to-[rgba(0,0,0,0.10)] mix-blend-multiply pointer-events-none"></div>
+
                   <span className="flex justify-center flex-col text-[#FBFAF9] text-sm font-semibold leading-5 font-sans relative z-10">
                     {plan.buttonText}
                   </span>

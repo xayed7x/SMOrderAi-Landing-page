@@ -3,6 +3,7 @@
 import type React from "react"
 import { useState, useEffect, useRef } from "react"
 import HeroSection from "../components/hero-section"
+import { DemoSection } from "../components/demo-section"
 import ProblemSection from "../components/problem-section"
 import SolutionSection from "../components/solution-section"
 import VisionSection from "../components/vision-section"
@@ -136,9 +137,9 @@ export default function LandingPage() {
                 <div className="h-6 sm:h-7 md:h-8 flex justify-start items-start gap-2 sm:gap-3">
                   <button
                     onClick={() => formSectionRef.current?.scrollIntoView({ behavior: "smooth" })}
-                    className="px-2 sm:px-3 md:px-[14px] py-1 sm:py-[6px] bg-white shadow-[0px_1px_2px_rgba(55,50,47,0.12)] overflow-hidden rounded-full flex justify-center items-center hover:bg-[rgba(55,50,47,0.05)] transition-colors cursor-pointer"
+                    className="px-2 sm:px-3 md:px-[14px] py-1 sm:py-[6px] rounded-full flex justify-center items-center bg-gradient-to-r from-[#605A57] to-[#37322f] shadow-[0px_1px_2px_rgba(55,50,47,0.12)] overflow-hidden animate-shimmer"
                   >
-                    <div className="flex flex-col justify-center text-[#37322F] text-xs md:text-[13px] font-medium leading-5 font-sans">
+                    <div className="flex flex-col justify-center text-white text-xs md:text-[13px] font-semibold leading-5 font-sans">
                       Pre Register
                     </div>
                   </button>
@@ -149,6 +150,11 @@ export default function LandingPage() {
             {/* Hero Section */}
             <div className="pb-8 sm:pb-12 md:pb-16 flex flex-col justify-start items-center px-2 sm:px-4 md:px-8 lg:px-0 w-full">
               <HeroSection />
+            </div>
+
+            {/* Demo Section */}
+            <div className="w-full">
+              <DemoSection />
             </div>
 
             {/* Problem Section */}
@@ -178,7 +184,7 @@ export default function LandingPage() {
 
             {/* Pricing Section */}
             <div className="w-full" id="pricing">
-              <EarlyBirdPricing onPlanSelect={handlePlanSelect} formSectionRef={formSectionRef} />
+              <EarlyBirdPricing selectedPlan={selectedPlan} onPlanSelect={handlePlanSelect} formSectionRef={formSectionRef} />
             </div>
 
             {/* Pre-registration form section directly after pricing */}

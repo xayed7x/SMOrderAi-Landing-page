@@ -57,7 +57,7 @@ export default function ProblemSection() {
           {problemCards.map((card, index) => (
             <div
               key={index}
-              className="px-4 md:px-6 py-3 md:py-4 border border-[rgba(55,50,47,0.12)] rounded-lg hover:bg-[rgba(55,50,47,0.03)] transition-colors"
+              className="px-4 md:px-6 py-3 md:py-4 border border-[rgba(55,50,47,0.12)] rounded-lg hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-xl">{card.icon}</span>

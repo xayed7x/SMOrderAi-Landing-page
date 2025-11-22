@@ -43,7 +43,7 @@ export function HeroSection() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6">
             <Button
-              className="bg-[#37322F] hover:bg-[#2A2520] text-white text-sm font-semibold font-sans rounded-full px-6 py-3 shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset]"
+              className="bg-gradient-to-r from-[#605A57] to-[#37322f] text-white text-sm font-semibold font-sans rounded-full px-6 py-3 animate-shimmer"
               onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
             >
               Pre-Register Now
@@ -72,9 +72,9 @@ export function HeroSection() {
           <div className="w-full mt-8 md:mt-12">
             <div className="w-full aspect-video bg-gradient-to-b from-[#f0ede9] to-[#e8e5e2] rounded-lg flex items-center justify-center border border-[rgba(55,50,47,0.12)]">
               <div className="text-center text-[#605A57]">
-                <div className="text-4xl md:text-5xl mb-2">📱💬✨</div>
+                <div className="text-4xl md:text-5xl mb-2">📸➡️📦</div>
                 <p className="text-sm md:text-base font-medium">
-                  AI Comment Reply Flow
+                  Screenshot to Order: Fully Automated
                 </p>
               </div>
             </div>

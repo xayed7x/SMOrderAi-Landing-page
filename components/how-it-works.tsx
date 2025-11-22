@@ -102,7 +102,7 @@ export default function HowItWorks() {
         </div>
 
         {/* Value Reinforcement */}
-        <div className="w-full max-w-[800px] px-4 md:px-6 py-6 md:py-8 bg-[rgba(55,50,47,0.05)] rounded-lg border border-[rgba(55,50,47,0.12)] text-center">
+        <div className="w-full max-w-[800px] px-4 md:px-6 py-6 md:py-8 bg-[rgba(55,50,47,0.05)] rounded-lg border border-[rgba(55,50,47,0.12)] text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
           <p className="text-[#37322F] font-semibold text-base md:text-lg">
             This simple setup increases your sales, conversion rates, and brand
             trust from day one.

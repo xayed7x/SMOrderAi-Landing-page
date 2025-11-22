@@ -192,7 +192,7 @@ export default function SolutionSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="p-4 md:p-6 border border-[rgba(55,50,47,0.12)] rounded-lg hover:bg-[rgba(55,50,47,0.02)] transition-colors"
+              className="p-4 md:p-6 border border-[rgba(55,50,47,0.12)] rounded-lg hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
               <div className="flex items-start gap-3 md:gap-4 mb-3">
                 <div className="text-2xl md:text-3xl">{feature.icon}</div>
