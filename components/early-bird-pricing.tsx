@@ -28,7 +28,7 @@ const plans: PricingPlan[] = [
     features: [
       "Unlimited Comment Replies & DMs",
       "Smart Intent Detection (Buying vs General)",
-      "AI Product Recognition (500 screenshots/month)",
+      "AI Product Recognition (400 screenshots/month)",
       "Conversational Order Collection",
       "Product Database (100 products)",
       "Lead Management Dashboard",
@@ -49,7 +49,7 @@ const plans: PricingPlan[] = [
     tagline: "Scale করুন tension-free।",
     features: [
       "সব Pro features",
-      "2,000 screenshots/month (৪x বেশি)",
+      "1,000 screenshots/month",
       "Unlimited Products",
       "Unlimited Pages",
       "Priority Support (WhatsApp)",
