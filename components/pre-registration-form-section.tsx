@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { submitPreRegistration } from "@/app/actions"
+import { plans } from "./early-bird-pricing"
 
 interface PreRegistrationFormSectionProps {
   selectedPlan: string
@@ -33,11 +34,15 @@ export default function PreRegistrationFormSection({ selectedPlan }: PreRegistra
     setIsLoading(true);
     setErrorMessage(null);
 
+    // Find the plan to get its display name
+    const selectedPlanData = plans.find(plan => plan.id === selectedPlan);
+    const planDisplayName = selectedPlanData?.displayName || selectedPlan;
+
     const formData = new FormData();
     formData.append('name', formFields.name);
     formData.append('email', formFields.email);
     formData.append('phone', formFields.phone);
-    formData.append('selected_plan', selectedPlan);
+    formData.append('selected_plan', planDisplayName); // Use display name instead of ID
 
     try {
       const result = await submitPreRegistration(formData);

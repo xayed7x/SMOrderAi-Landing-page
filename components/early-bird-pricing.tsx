@@ -5,8 +5,9 @@ import { toast } from "sonner"
 import { cn } from "@/lib/utils"
 import { Check } from 'lucide-react'
 
-interface PricingPlan {
+export interface PricingPlan {
   id: string
+  displayName: string // Clean name for database and emails
   title: string
   price: string
   regularPrice?: string
@@ -17,61 +18,74 @@ interface PricingPlan {
   founderGuarantee?: string
 }
 
-const plans: PricingPlan[] = [
+export const plans: PricingPlan[] = [
+  {
+    id: "starter",
+    displayName: "Starter",
+    title: "Starter",
+    price: "499৳/month",
+    badge: "PERFECT FOR BEGINNERS",
+    tagline: "শুরু করুন আপনার automation journey।",
+    features: [
+      "Unlimited Products",
+      "300 Screenshots/Month",
+      "Unlimited Comments",
+      "Unlimited Conversations",
+      "Unlimited Uploads",
+      "AI Product Recognition",
+      "Conversational Order Collection",
+      "Lead Management Dashboard",
+      "Basic Analytics",
+      "Email Support",
+    ],
+    buttonText: "Pre-Register Now",
+  },
   {
     id: "pro-founder",
+    displayName: "Pro - Founder Offer",
     title: "Pro — Founder Launch Price ⭐",
     price: "599৳/month",
-    regularPrice: "Regular Price: 999৳/month",
-    badge: "BEST VALUE — 40% OFF FOREVER",
+    regularPrice: "Regular Price: 899৳/month",
+    badge: "BEST VALUE — FOUNDER OFFER",
     tagline: "সম্পূর্ণ automation। Lifetime locked price।",
     features: [
-      "Unlimited Comment Replies & DMs",
+      "Unlimited Products",
+      "1,500 Screenshots/Month ⭐",
+      "Unlimited Comments",
+      "Unlimited Conversations",
+      "Unlimited Uploads",
       "Smart Intent Detection (Buying vs General)",
-      "AI Product Recognition (400 screenshots/month)",
+      "AI Product Recognition",
       "Conversational Order Collection",
-      "Product Database (100 products)",
       "Lead Management Dashboard",
-      "Order Tracking (manual entry)",
-      "Basic Analytics",
-      "3 Facebook Pages",
-      "24/7 Email Support",
+      "Advanced Analytics",
+      "Priority Email Support",
       "Setup Assistance",
     ],
     buttonText: "Pre-Register Now",
-    founderGuarantee: "যখন Phase 2 launch হবে (Payment + Delivery integration), আপনি সব পাবেন — কিন্তু price থাকবে ৳৫৯৯-ই।",
+    founderGuarantee: "যখন Phase 2 launch হবে (Payment + Delivery integration), আপনি সব পাবেন — কিন্তু price থাকবে ৳৫৯৯-ই। শুধুমাত্র প্রথম ৫০ users-এর জন্য।",
   },
   {
     id: "business",
+    displayName: "Business",
     title: "Business",
-    price: "1,299৳/month",
+    price: "1,799৳/month",
     badge: "FOR GROWING BUSINESSES",
     tagline: "Scale করুন tension-free।",
     features: [
-      "সব Pro features",
-      "1,000 screenshots/month",
       "Unlimited Products",
-      "Unlimited Pages",
+      "5,000 Screenshots/Month",
+      "Unlimited Comments",
+      "Unlimited Conversations",
+      "Unlimited Uploads",
+      "সব Pro features",
       "Priority Support (WhatsApp)",
-      "Advanced Analytics",
+      "Advanced Analytics & Reports",
+      "Multiple Facebook Pages",
+      "Dedicated Account Manager",
+      "Custom Integrations",
     ],
     buttonText: "Pre-Register Now",
-  },
-  {
-    id: "enterprise",
-    title: "Enterprise",
-    price: "কাস্টম প্রাইসিং",
-    badge: "UNLIMITED EVERYTHING",
-    tagline: "Large businesses-এর জন্য।",
-    features: [
-      "সব Business features",
-      "Unlimited Screenshots",
-      "Dedicated Account Manager",
-      "Phone Support",
-      "Custom Integrations",
-      "Training Sessions",
-    ],
-    buttonText: "Contact Us",
   },
 ]
 
@@ -95,7 +109,7 @@ export default function EarlyBirdPricing({ selectedPlan, onPlanSelect, formSecti
           </p>
           <div className="flex flex-col items-center gap-1">
              <p className="self-stretch text-center text-[#605A57] text-sm font-medium leading-6 font-sans">
-              প্রথম ১০০ Founder Members পাবে Lifetime Discount।
+              প্রথম ৫০ Founder Members পাবে Lifetime Discount।
             </p>
             <p className="self-stretch text-center text-[#37322F] text-lg font-bold leading-6 font-sans">
               মাত্র ৳৫৯৯/month — forever locked।
@@ -112,7 +126,8 @@ export default function EarlyBirdPricing({ selectedPlan, onPlanSelect, formSecti
               key={plan.id}
               className={cn(
                 "flex-1 px-6 py-8 md:py-12 bg-white border rounded-lg flex flex-col justify-start items-start gap-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative cursor-pointer",
-                selectedPlan === plan.id && "border-2 border-[#37322f]"
+                selectedPlan === plan.id && "border-2 border-[#37322f]",
+                plan.id === "pro-founder" && "animate-border-glow animate-pulse-glow border-2"
               )}
               onClick={() => onPlanSelect(plan.id)}
             >
@@ -158,7 +173,6 @@ export default function EarlyBirdPricing({ selectedPlan, onPlanSelect, formSecti
                   }}
                   className="self-stretch px-4 py-3 relative bg-gradient-to-r from-[#605A57] to-[#37322f] text-white rounded-[99px] flex justify-center items-center animate-shimmer"
                 >
-
                   <span className="flex justify-center flex-col text-[#FBFAF9] text-sm font-semibold leading-5 font-sans relative z-10">
                     {plan.buttonText}
                   </span>
@@ -185,7 +199,7 @@ export default function EarlyBirdPricing({ selectedPlan, onPlanSelect, formSecti
                     {plan.founderGuarantee}
                   </p>
                   <p className="text-[#847971] text-[10px] mt-2">
-                    "শুধুমাত্র প্রথম ১০০ members-এর জন্য। তারপর price ৳৯৯৯/month।"
+                    "শুধুমাত্র প্রথম ৫০ members-এর জন্য। তারপর price ৳৮৯৯/month।"
                   </p>
                 </div>
               )}
