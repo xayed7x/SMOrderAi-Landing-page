@@ -20,6 +20,15 @@ export async function submitPreRegistration(formData: FormData) {
     const { error } = await supabase.from('pre_registrations').insert([rawFormData]);
     if (error) {
       console.error('Supabase insert error:', error);
+      
+      // Handle duplicate email error gracefully
+      if (error.code === '23505') {
+        return { 
+          success: false, 
+          message: 'This email is already registered! Check your inbox for our confirmation email.' 
+        };
+      }
+      
       throw new Error(error.message);
     }
 
