@@ -28,7 +28,7 @@ export const plans: PricingPlan[] = [
     tagline: "শুরু করুন আপনার automation journey।",
     features: [
       "Unlimited Products",
-      "300 Screenshots/Month",
+      "500 Screenshots/Month",
       "Unlimited Comments",
       "Unlimited Conversations",
       "Unlimited Uploads",
