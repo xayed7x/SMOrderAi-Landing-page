@@ -204,6 +204,18 @@ export default function FooterSection() {
               >
                 Contact
               </Link>
+              <Link
+                href="/privacy-policy"
+                className="text-[#49423D] text-sm font-normal leading-5 font-sans cursor-pointer hover:text-[#37322F] transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms"
+                className="text-[#49423D] text-sm font-normal leading-5 font-sans cursor-pointer hover:text-[#37322F] transition-colors"
+              >
+                Terms of Service
+              </Link>
             </div>
           </div>
 
