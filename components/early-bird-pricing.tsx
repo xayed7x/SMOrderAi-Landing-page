@@ -166,17 +166,14 @@ export default function EarlyBirdPricing({ selectedPlan, onPlanSelect, formSecti
                     </p>
                   </div>
 
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation(); // prevent card click from firing again
-                    formSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
-                  }}
+                <a
+                  href="https://autex-app.vercel.app/"
                   className="self-stretch px-4 py-3 relative bg-gradient-to-r from-[#605A57] to-[#37322f] text-white rounded-[99px] flex justify-center items-center animate-shimmer"
                 >
                   <span className="flex justify-center flex-col text-[#FBFAF9] text-sm font-semibold leading-5 font-sans relative z-10">
                     {plan.buttonText}
                   </span>
-                </button>
+                </a>
               </div>
 
               {/* Features List */}

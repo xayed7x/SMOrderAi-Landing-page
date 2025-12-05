@@ -135,14 +135,22 @@ export default function LandingPage() {
                   </div>
                 </div>
                 <div className="h-6 sm:h-7 md:h-8 flex justify-start items-start gap-2 sm:gap-3">
-                  <button
-                    onClick={() => formSectionRef.current?.scrollIntoView({ behavior: "smooth" })}
-                    className="px-2 sm:px-3 md:px-[14px] py-1 sm:py-[6px] rounded-full flex justify-center items-center bg-gradient-to-r from-[#605A57] to-[#37322f] shadow-[0px_1px_2px_rgba(55,50,47,0.12)] overflow-hidden animate-shimmer"
+                  <a
+                    href="https://autex-app.vercel.app/"
+                    className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full flex justify-center items-center hover:bg-[rgba(55,50,47,0.04)] transition-colors"
                   >
-                    <div className="flex flex-col justify-center text-white text-xs md:text-[13px] font-semibold leading-5 font-sans">
-                      Pre Register
+                    <div className="text-[#37322F] text-xs md:text-[13px] font-medium leading-5 font-sans">
+                      Login
                     </div>
-                  </button>
+                  </a>
+                  <a
+                    href="https://autex-app.vercel.app/"
+                    className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full flex justify-center items-center bg-[#37322F] text-white shadow-sm hover:bg-[#2F2A28] transition-colors"
+                  >
+                    <div className="text-white text-xs md:text-[13px] font-medium leading-5 font-sans">
+                      Sign Up
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
