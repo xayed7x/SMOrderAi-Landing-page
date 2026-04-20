@@ -9,7 +9,7 @@ import SolutionSection from "../components/solution-section"
 import VisionSection from "../components/vision-section"
 import HowItWorks from "../components/how-it-works"
 import TestimonialsSection from "../components/testimonials-section"
-import EarlyBirdPricing from "../components/early-bird-pricing"
+import PricingSection from "../components/pricing-section"
 
 import FAQSection from "../components/faq-section"
 import CTASection from "../components/cta-section"
@@ -188,7 +188,7 @@ export default function LandingPage() {
 
             {/* Pricing Section */}
             <div className="w-full" id="pricing">
-              <EarlyBirdPricing />
+              <PricingSection />
             </div>
 
             {/* FAQ Section with ID for nav */}

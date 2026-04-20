@@ -249,7 +249,7 @@ export default function FooterSection() {
       {/* Bottom Section with Pattern */}
       <div className="self-stretch h-12 relative overflow-hidden border-t border-[rgba(55,50,47,0.12)] flex items-center justify-center">
         <div className="text-[#605A57] text-xs md:text-sm font-normal">
-          © 2025 Autex. All rights reserved.
+          © 2026 Autex. All rights reserved.
         </div>
       </div>
     </div>

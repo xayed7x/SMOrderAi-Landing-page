@@ -85,7 +85,7 @@ export function HeroSection() {
           {/* Free Trial Info */}
           <div className="text-center mt-4">
             <p className="text-[#37322f] text-sm font-semibold font-sans">
-              🎉 3 Days Free Trial — No Payment Required
+              🎉 14 Days Free Trial — No Payment Required
             </p>
             <p className="text-[#605A57] text-xs font-medium font-sans">
               সব features আনলক। ফ্রিতে ব্যবহার করে দেখুন।

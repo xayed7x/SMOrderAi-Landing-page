@@ -9,28 +9,28 @@ export default function VisionSection() {
       title: "Automated Payment Gateway",
       titleBn: "স্বয়ংক্রিয় পেমেন্ট সিস্টেম",
       description: "bKash, Nagad, Rocket integration। Customer pay করলেই auto-verify। আপনি manually screenshot check করবেন না।",
-      coming: "Coming: Phase 2 (Q1 2025)",
+      coming: "Coming: Phase 2 (Q1 2026)",
     },
     {
       icon: "🚚",
       title: "Delivery Partner Integration",
       titleBn: "Pathao, eCourier Auto-Connect",
       description: "Order confirm হলেই automatically parcel create। Rider assign হবে। Customer tracking link পাবে। এক click-এ delivery handled।",
-      coming: "Coming: Phase 2 (Q1 2025)",
+      coming: "Coming: Phase 2 (Q1 2026)",
     },
     {
       icon: "📈",
       title: "Advanced Customer Analytics",
       titleBn: "গ্রাহক বিশ্লেষণ ড্যাশবোর্ড",
       description: "কোন area-তে বেশি order? কোন product জনপ্রিয়? Repeat customers কারা? Facebook ad targeting data।",
-      coming: "Coming: Phase 2 (Q2 2025)",
+      coming: "Coming: Phase 2 (Q2 2026)",
     },
     {
       icon: "📦",
       title: "Smart Inventory Management",
       titleBn: "স্টক ম্যানেজমেন্ট",
       description: "Auto-stock tracking। Low stock alerts। Reorder suggestions।",
-      coming: "Coming: Phase 2 (Q2 2025)",
+      coming: "Coming: Phase 2 (Q2 2026)",
     },
   ]
 
@@ -43,7 +43,7 @@ export default function VisionSection() {
             এটা শুধু শুরু। Autex-এর Future আরও Powerful।
           </h2>
           <p className="self-stretch text-center text-[#605A57] text-base md:text-lg font-normal leading-7 font-sans">
-            Phase 2 Launch: ২-৩ মাসের মধ্যে। এখনই ৩ দিনের ফ্রি ট্রায়াল শুরু করুন এবং সব features experience করুন।
+            Phase 2 Launch: ২-৩ মাসের মধ্যে। এখনই ১৪ দিনের ফ্রি ট্রায়াল শুরু করুন এবং সব features experience করুন।
           </p>
         </div>
       </div>
@@ -80,10 +80,10 @@ export default function VisionSection() {
         {/* Closing CTA */}
         <div className="text-center mt-4">
           <p className="text-[#37322f] text-lg font-semibold font-sans">
-            🎉 Currently Free for 3 Days
+            🎉 ১৪ দিন Free Trial — কোনো payment নেই।
           </p>
           <p className="text-[#605A57] text-sm font-medium font-sans mt-2">
-            কোনো payment নেই। ৩ দিন ফ্রিতে ব্যবহার করে দেখুন।
+            কোনো payment নেই। ১৪ দিন ফ্রিতে ব্যবহার করে দেখুন।
           </p>
         </div>
 

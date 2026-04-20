@@ -30,7 +30,7 @@ export default function SolutionSection() {
       iconColor: 'text-pink-600',
       title: "AI Product Recognition",
       titleBn: "ছবি থেকে Product চেনে",
-      description: "Screenshot পাঠালে AI আপনার database থেকে product খুঁজে বের করে। ৮৫-৯২% accuracy, ২-৫ সেকেন্ডে।",
+      description: "Screenshot পাঠালে AI আপনার database থেকে product খুঁজে বের করে। ৯৭% accuracy, ২-৫ সেকেন্ডে।",
     },
     {
       icon: MessageSquare,

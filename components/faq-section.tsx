@@ -30,7 +30,7 @@ const faqData: FAQItem[] = [
           </li>
           <li>
             <span className="font-semibold">Advanced AI vision:</span> High
-            accuracy (85-92%)
+            accuracy (97%)
           </li>
         </ol>
         <p className="text-sm bg-yellow-50 text-yellow-800 p-2 rounded border border-yellow-100">
@@ -68,7 +68,7 @@ const faqData: FAQItem[] = [
       <div className="space-y-3">
         <p>
           আমরা target করছি{" "}
-          <span className="font-semibold">২-৩ মাসের মধ্যে (Q1 2025)</span>।
+          <span className="font-semibold">২-৩ মাসের মধ্যে (Q1 2026)</span>।
         </p>
         <div>
           <p className="font-medium mb-1">Phase 2-তে আসবে:</p>
@@ -79,7 +79,7 @@ const faqData: FAQItem[] = [
           </ul>
         </div>
         <p className="text-sm bg-green-50 text-green-800 p-2 rounded border border-green-100 font-medium">
-          এখনই ৩ দিনের ফ্রি ট্রায়াল শুরু করুন এবং সব features experience করুন!
+          এখনই ১৪ দিনের ফ্রি ট্রায়াল শুরু করুন এবং সব features experience করুন!
         </p>
       </div>
     ),

@@ -4,7 +4,7 @@ export default function PrivacyPolicy() {
     <main className="py-12 sm:py-16">
       <div className="container mx-auto px-4 max-w-4xl">
         <h1 className="text-3xl font-bold mb-6 text-center sm:text-4xl">Privacy Policy - Autex</h1>
-        <p className="text-center text-muted-foreground mb-10">Last updated: December 4, 2025</p>
+        <p className="text-center text-muted-foreground mb-10">Last updated: December 4, 2026</p>
         
         <div className="space-y-8">
           <section>

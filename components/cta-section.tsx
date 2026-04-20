@@ -51,14 +51,14 @@ export default function CTASection() {
             </div>
             
             <div className="w-full max-w-[497px] flex flex-col justify-center items-center gap-4">
-              <p className="text-[#37322F] font-semibold text-sm uppercase tracking-wider">🎉 ৩ দিন সম্পূর্ণ ফ্রি — এখনই শুরু করুন</p>
+              <p className="text-[#37322F] font-semibold text-sm uppercase tracking-wider">🎉 ১৪ দিন সম্পূর্ণ ফ্রি — এখনই শুরু করুন</p>
               <a
                 href="https://app.autexai.com/"
                 className="w-full px-6 py-4 relative bg-[#37322F] shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset] overflow-hidden rounded-full flex justify-center items-center cursor-pointer hover:bg-[#2A2520] transition-colors text-center group"
               >
                 <div className="w-44 h-[41px] absolute left-0 top-0 bg-gradient-to-b from-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.10)] mix-blend-multiply pointer-events-none"></div>
                 <span className="text-white text-base font-bold leading-5 font-sans relative z-10 block">
-                  Start Your Free 3-Day Trial
+                  Start Your Free 14-Day Trial
                 </span>
               </a>
               <p className="text-[#605A57] text-xs italic">No credit card required। কোনো commitment নেই।</p>
