@@ -3,13 +3,14 @@
 import type React from "react"
 import { useState, useEffect, useRef } from "react"
 import HeroSection from "../components/hero-section"
+import { DemoSection } from "../components/demo-section"
 import ProblemSection from "../components/problem-section"
 import SolutionSection from "../components/solution-section"
 import VisionSection from "../components/vision-section"
 import HowItWorks from "../components/how-it-works"
 import TestimonialsSection from "../components/testimonials-section"
-import EarlyBirdPricing from "../components/early-bird-pricing"
-import PreRegistrationFormSection from "../components/pre-registration-form-section"
+import PricingSection from "../components/pricing-section"
+
 import FAQSection from "../components/faq-section"
 import CTASection from "../components/cta-section"
 import FooterSection from "../components/footer-section"
@@ -29,9 +30,7 @@ function Badge({ icon, text }: { icon: React.ReactNode; text: string }) {
 export default function LandingPage() {
   const [activeCard, setActiveCard] = useState(0)
   const [progress, setProgress] = useState(0)
-  const [selectedPlan, setSelectedPlan] = useState("")
   const mountedRef = useRef(true)
-  const formSectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const progressInterval = setInterval(() => {
@@ -66,9 +65,7 @@ export default function LandingPage() {
     setProgress(0)
   }
 
-  const handlePlanSelect = (planId: string) => {
-    setSelectedPlan(planId)
-  }
+
 
   const getDashboardContent = () => {
     switch (activeCard) {
@@ -84,7 +81,7 @@ export default function LandingPage() {
   }
 
   return (
-    <div className="w-full min-h-screen relative bg-[#F7F5F3] overflow-x-hidden flex flex-col justify-start items-center">
+    <div className="w-full min-h-screen relative bg-[#F7F5F3] flex flex-col justify-start items-center">
       <div className="relative flex flex-col justify-start items-center w-full">
         {/* Main container with proper margins */}
         <div className="w-full max-w-none px-4 sm:px-6 md:px-8 lg:px-0 lg:max-w-[1060px] lg:w-[1060px] relative flex flex-col justify-start items-start min-h-screen">
@@ -94,16 +91,16 @@ export default function LandingPage() {
           {/* Right vertical line */}
           <div className="w-[1px] h-full absolute right-4 sm:right-6 md:right-8 lg:right-0 top-0 bg-[rgba(55,50,47,0.12)] shadow-[1px_0px_0px_white] z-0"></div>
 
-          <div className="self-stretch pt-[9px] overflow-hidden border-b border-[rgba(55,50,47,0.06)] flex flex-col justify-center items-center gap-4 sm:gap-6 md:gap-8 lg:gap-[66px] relative z-10">
+          <div className="self-stretch pt-[9px] border-b border-[rgba(55,50,47,0.06)] flex flex-col justify-center items-center gap-4 sm:gap-6 md:gap-8 lg:gap-[66px] relative z-10">
             {/* Navigation */}
-            <div className="w-full h-12 sm:h-14 md:h-16 lg:h-[84px] absolute left-0 top-0 flex justify-center items-center z-20 px-6 sm:px-8 md:px-12 lg:px-0">
+            <div className="w-full h-12 sm:h-14 md:h-16 lg:h-[84px] sticky left-0 top-0 flex justify-center items-center z-20 px-6 sm:px-8 md:px-12 lg:px-0 bg-[#F7F5F3]">
               <div className="w-full h-0 absolute left-0 top-6 sm:top-7 md:top-8 lg:top-[42px] border-t border-[rgba(55,50,47,0.12)] shadow-[0px_1px_0px_white]"></div>
 
               <div className="w-full max-w-[calc(100%-32px)] sm:max-w-[calc(100%-48px)] md:max-w-[calc(100%-64px)] lg:max-w-[700px] lg:w-[700px] h-10 sm:h-11 md:h-12 py-1.5 sm:py-2 px-3 sm:px-4 md:px-4 pr-2 sm:pr-3 bg-[#F7F5F3] backdrop-blur-sm shadow-[0px_0px_0px_2px_white] overflow-hidden rounded-[50px] flex justify-between items-center relative z-30">
                 <div className="flex justify-center items-center">
                   <div className="flex justify-start items-center">
                     <div className="flex flex-col justify-center text-[#2F3037] text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-5 font-sans">
-                      SmartOrder AI
+                      Autex
                     </div>
                   </div>
                   <div className="pl-3 sm:pl-4 md:pl-5 lg:pl-5 flex justify-start items-start hidden sm:flex flex-row gap-2 sm:gap-3 md:gap-4 lg:gap-4">
@@ -134,21 +131,34 @@ export default function LandingPage() {
                   </div>
                 </div>
                 <div className="h-6 sm:h-7 md:h-8 flex justify-start items-start gap-2 sm:gap-3">
-                  <button
-                    onClick={() => formSectionRef.current?.scrollIntoView({ behavior: "smooth" })}
-                    className="px-2 sm:px-3 md:px-[14px] py-1 sm:py-[6px] bg-white shadow-[0px_1px_2px_rgba(55,50,47,0.12)] overflow-hidden rounded-full flex justify-center items-center hover:bg-[rgba(55,50,47,0.05)] transition-colors cursor-pointer"
+                  <a
+                    href="https://app.autexai.com/"
+                    className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full flex justify-center items-center hover:bg-[rgba(55,50,47,0.04)] transition-colors"
                   >
-                    <div className="flex flex-col justify-center text-[#37322F] text-xs md:text-[13px] font-medium leading-5 font-sans">
-                      Pre Register
+                    <div className="text-[#37322F] text-xs md:text-[13px] font-medium leading-5 font-sans">
+                      Login
                     </div>
-                  </button>
+                  </a>
+                  <a
+                    href="https://app.autexai.com/"
+                    className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full flex justify-center items-center bg-[#37322F] text-white shadow-sm hover:bg-[#2F2A28] transition-colors"
+                  >
+                    <div className="text-white text-xs md:text-[13px] font-medium leading-5 font-sans">
+                      Sign Up
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
 
             {/* Hero Section */}
-            <div className="pt-16 sm:pt-20 md:pt-24 lg:pt-[216px] pb-8 sm:pb-12 md:pb-16 flex flex-col justify-start items-center px-2 sm:px-4 md:px-8 lg:px-0 w-full">
+            <div className="pb-8 sm:pb-12 md:pb-16 flex flex-col justify-start items-center px-2 sm:px-4 md:px-8 lg:px-0 w-full">
               <HeroSection />
+            </div>
+
+            {/* Demo Section */}
+            <div className="w-full">
+              <DemoSection />
             </div>
 
             {/* Problem Section */}
@@ -178,12 +188,7 @@ export default function LandingPage() {
 
             {/* Pricing Section */}
             <div className="w-full" id="pricing">
-              <EarlyBirdPricing onPlanSelect={handlePlanSelect} formSectionRef={formSectionRef} />
-            </div>
-
-            {/* Pre-registration form section directly after pricing */}
-            <div className="w-full" ref={formSectionRef}>
-              <PreRegistrationFormSection selectedPlan={selectedPlan} />
+              <PricingSection />
             </div>
 
             {/* FAQ Section with ID for nav */}

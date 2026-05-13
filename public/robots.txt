@@ -1,0 +1,11 @@
+# Robots.txt for Autex AI
+# https://www.autexai.com
+
+User-agent: *
+Allow: /
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /auth/
+
+# Sitemap
+Sitemap: https://www.autexai.com/sitemap.xml

@@ -1,70 +1,79 @@
 'use client'
 
+import { Clock, Camera, Moon } from 'lucide-react'
+
 export default function ProblemSection() {
-  const painPoints = [
+  const problemCards = [
     {
-      en: "Missing Customer Responses",
-      bn: "একটা কমেন্টের রিপ্লাই দিতে দেরি হওয়ায় কাস্টমার অন্য পেজ থেকে কিনে নিয়েছে।",
+      icon: Clock,
+      accentColor: 'from-red-400 to-red-500',
+      iconBg: 'bg-red-50',
+      iconColor: 'text-red-500',
+      title: "Slow Response = Lost Sales",
+      description: "কাস্টমার রাত ২টায় কমেন্ট করে, আপনি সকাল ৯টায় reply দেন — ততক্ষণে সে অন্য পেজ থেকে কিনে ফেলেছে।",
     },
     {
-      en: "Overwhelming Comment Volume",
-      bn: "একসাথে 10,000 টা কমেন্ট আসলে রিপ্লাই দিতে দিতে দিন শেষ, আসল কাজে মনোযোগই দিতে পারি না।",
+      icon: Camera,
+      accentColor: 'from-orange-400 to-orange-500',
+      iconBg: 'bg-orange-50',
+      iconColor: 'text-orange-500',
+      title: "Screenshot Chaos",
+      description: "কাস্টমার screenshot পাঠায়, আপনি manually খুঁজে বের করেন — সময় নষ্ট, ভুল হয়, customer angry।",
     },
     {
-      en: "Rising Moderator Costs",
-      bn: "মডারেটর রাখতে গিয়ে খরচ বাড়ছে, আবার তার ভুলের কারণেও কাস্টমার হারাতে হচ্ছে।",
-    },
-    {
-      en: "Time Zone Delays",
-      bn: "রাতের বেলা বা ছুটির দিনে আসা কমেন্টগুলোর উত্তর দিতে দেরি হয়ে যায়, ততক্ষণে কাস্টমারের আগ্রহ কমে যায়।",
-    },
-    {
-      en: "Lost Conversions",
-      bn: "কমেন্ট থেকে ইনবক্সে নিতে গিয়ে অর্ধেক কাস্টমার রাস্তা হারিয়ে যায়।",
+      icon: Moon,
+      accentColor: 'from-amber-400 to-yellow-500',
+      iconBg: 'bg-amber-50',
+      iconColor: 'text-amber-500',
+      title: "24/7 is Impossible",
+      description: "আপনি ঘুমান, কিন্তু customers থামে না। ৩০-৪০% orders মিস হয় শুধু response delay-তে।",
     },
   ]
 
   return (
-    <div className="w-full border-b border-[rgba(55,50,47,0.12)] flex flex-col justify-center items-center">
-      {/* Header */}
-      <div className="self-stretch px-6 md:px-12 py-12 md:py-16 border-b border-[rgba(55,50,47,0.12)] flex justify-center items-center gap-6">
-        <div className="w-full max-w-[586px] px-4 md:px-6 py-4 md:py-5 overflow-hidden rounded-lg flex flex-col justify-start items-center gap-4">
-          <h2 className="w-full text-center flex justify-center flex-col text-[#49423D] text-2xl md:text-4xl font-semibold leading-tight md:leading-[44px] font-sans tracking-tight">
+    <section className="w-full border-b border-[rgba(55,50,47,0.12)] py-16 md:py-24">
+      <div className="max-w-[900px] mx-auto px-4 md:px-6">
+        {/* Header */}
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-[#49423D] text-2xl md:text-4xl font-semibold leading-tight tracking-tight mb-3">
             আপনার ব্যবসা প্রতিদিন কাস্টমার হারাচ্ছে
           </h2>
-          <p className="self-stretch text-center text-[#605A57] text-base md:text-lg font-normal leading-7 font-sans">
+          <p className="text-[#605A57] text-base md:text-lg">
             আপনি হয়তো বুঝতেই পারছেন না।
           </p>
         </div>
-      </div>
 
-      {/* Pain Points */}
-      <div className="self-stretch px-4 md:px-12 py-8 md:py-12 flex flex-col justify-center items-center gap-4">
-        <div className="w-full max-w-[800px] flex flex-col gap-3 md:gap-4">
-          {painPoints.map((point, index) => (
-            <div
-              key={index}
-              className="px-4 md:px-6 py-3 md:py-4 border border-[rgba(55,50,47,0.12)] rounded-lg hover:bg-[rgba(55,50,47,0.03)] transition-colors"
-            >
-              <p className="text-[#49423D] font-semibold text-base md:text-lg mb-1">
-                {point.en}
-              </p>
-              <p className="text-[#605A57] text-sm md:text-base font-normal leading-relaxed">
-                "{point.bn}"
-              </p>
-            </div>
-          ))}
+        {/* Problem Cards - Clean Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          {problemCards.map((card, index) => {
+            const IconComponent = card.icon
+            return (
+              <div
+                key={index}
+                className="relative bg-white rounded-xl p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden group"
+              >
+                {/* Left Accent Border */}
+                <div className={`absolute left-0 top-0 h-full w-1 bg-gradient-to-b ${card.accentColor}`} />
+                
+                {/* Icon */}
+                <div className={`w-12 h-12 ${card.iconBg} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <IconComponent className={`w-6 h-6 ${card.iconColor}`} strokeWidth={1.5} />
+                </div>
+                
+                {/* Title */}
+                <h3 className="text-[#49423D] text-lg font-semibold mb-2">
+                  {card.title}
+                </h3>
+                
+                {/* Description - Short & Sweet */}
+                <p className="text-[#605A57] text-sm leading-relaxed">
+                  {card.description}
+                </p>
+              </div>
+            )
+          })}
         </div>
       </div>
-
-      {/* Closing statement */}
-      <div className="self-stretch px-4 md:px-12 pb-12 md:pb-16 flex justify-center items-center">
-        <div className="w-full max-w-[800px] px-4 md:px-6 py-6 md:py-8 bg-[rgba(55,50,47,0.05)] rounded-lg border border-[rgba(55,50,47,0.12)]">
-          <p className="text-center text-[#37322F] font-semibold text-lg md:text-xl">
-            This is exactly the problem SmartOrder AI solves — instantly and permanently.
-          </p>
-        </div>
-      </div>
-    </div>
+    </section>
   )
 }
